@@ -7,7 +7,6 @@ const NavBar = () => {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 px-4 md:px-6">
-      {/* Main Navbar */}
       <div
         className={`
           mx-auto mt-4 max-w-6xl
@@ -16,11 +15,11 @@ const NavBar = () => {
           transition-all duration-300
         `}
       >
-        <div className="flex items-center justify-between px-6 py-3.5 md:py-4">
+        <div className="flex items-center justify-between px-4 py-3 md:py-3">
 
           <div className="flex items-center gap-3">
-            <div className="w-10 md:w-12">
-              <img src={Logo} alt="Logo" className="w-full drop-shadow-md" />
+            <div className="w-12 md:w-16">
+              <img src={Logo} alt="Logo" className="drop-shadow-md" />
             </div>
           </div>
 
@@ -32,7 +31,7 @@ const NavBar = () => {
                   href="#"
                   className={`
                     relative px-2 py-1.5 text-[#f0f4ff] transition-all duration-300
-                    hover:text-white
+                    hover:text-white   text-[20px]
                     after:content-[''] after:absolute after:bottom-0 after:left-1/2 
                     after:w-0 after:h-0.5 after:bg-gradient-to-r after:from-cyan-400 after:to-blue-500
                     after:transition-all after:duration-300 after:rounded-full
@@ -47,7 +46,7 @@ const NavBar = () => {
 
 
           <div className="flex items-center gap-6">
-            <div className="hidden md:block w-10 md:w-11">
+            <div className="hidden md:block w-14 md:w-20">
               <img src={IT} alt="IT Logo" className="w-full drop-shadow-md" />
             </div>
 
