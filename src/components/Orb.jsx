@@ -1,14 +1,15 @@
-import { Mesh, Program, Renderer, Triangle, Vec3 } from 'ogl';
-import { useEffect, useRef } from 'react';
+import { Mesh, Program, Renderer, Triangle, Vec3 } from "ogl";
+import { useEffect, useRef, useState } from "react";
 
 export default function Orb({
   hue = 0,
   hoverIntensity = 0.2,
   rotateOnHover = true,
   forceHoverState = false,
-  backgroundColor = '#000000'
+  backgroundColor = "#000000",
 }) {
   const ctnDom = useRef(null);
+  const [webglSupported, setWebglSupported] = useState(true);
 
   const vert = /* glsl */ `
     precision highp float;
@@ -39,14 +40,12 @@ export default function Orb({
       float q = dot(c, vec3(0.211, -0.523, 0.312));
       return vec3(y, i, q);
     }
-    
     vec3 yiq2rgb(vec3 c) {
       float r = c.x + 0.956 * c.y + 0.621 * c.z;
       float g = c.x - 0.272 * c.y - 0.647 * c.z;
       float b = c.x - 1.106 * c.y + 1.703 * c.z;
       return vec3(r, g, b);
     }
-    
     vec3 adjustHue(vec3 color, float hueDeg) {
       float hueRad = hueDeg * 3.14159265 / 180.0;
       vec3 yiq = rgb2yiq(color);
@@ -68,7 +67,6 @@ export default function Orb({
         p3.y + p3.z
       ) * p3.zyx);
     }
-
     float snoise3(vec3 p) {
       const float K1 = 0.333333333;
       const float K2 = 0.166666667;
@@ -122,14 +120,14 @@ export default function Orb({
       float len = length(uv);
       float invLen = len > 0.0 ? 1.0 / len : 0.0;
 
-            float bgLuminance = dot(backgroundColor, vec3(0.299, 0.587, 0.114));
+      float bgLuminance = dot(backgroundColor, vec3(0.299, 0.587, 0.114));
       
       float n0 = snoise3(vec3(uv * noiseScale, iTime * 0.5)) * 0.5 + 0.5;
       float r0 = mix(mix(innerRadius, 1.0, 0.4), mix(innerRadius, 1.0, 0.6), n0);
       float d0 = distance(uv, (r0 * invLen) * uv);
       float v0 = light1(1.0, 10.0, d0);
       v0 *= smoothstep(r0 * 1.05, r0, len);
-            float innerFade = smoothstep(r0 * 0.8, r0 * 0.95, len);
+      float innerFade = smoothstep(r0 * 0.8, r0 * 0.95, len);
       v0 *= mix(innerFade, 1.0, bgLuminance * 0.7);
       float cl = cos(ang + iTime * 2.0) * 0.5 + 0.5;
       
@@ -154,7 +152,6 @@ export default function Orb({
       lightCol = clamp(lightCol, 0.0, 1.0);
       
       vec3 finalCol = mix(darkCol, lightCol, bgLuminance);
-      
       return extractAlpha(finalCol);
     }
 
@@ -162,15 +159,12 @@ export default function Orb({
       vec2 center = iResolution.xy * 0.5;
       float size = min(iResolution.x, iResolution.y);
       vec2 uv = (fragCoord - center) / size * 2.0;
-      
       float angle = rot;
       float s = sin(angle);
       float c = cos(angle);
       uv = vec2(c * uv.x - s * uv.y, s * uv.x + c * uv.y);
-      
       uv.x += hover * hoverIntensity * 0.1 * sin(uv.y * 10.0 + iTime);
       uv.y += hover * hoverIntensity * 0.1 * sin(uv.x * 10.0 + iTime);
-      
       return draw(uv);
     }
 
@@ -185,8 +179,39 @@ export default function Orb({
     const container = ctnDom.current;
     if (!container) return;
 
-    const renderer = new Renderer({ alpha: true, premultipliedAlpha: false });
-    const gl = renderer.gl;
+    // ✅ Test WebGL availability (webgl2 → webgl → experimental)
+    const testCanvas = document.createElement("canvas");
+    const testGl =
+      testCanvas.getContext("webgl2") ||
+      testCanvas.getContext("webgl") ||
+      testCanvas.getContext("experimental-webgl");
+
+    if (!testGl) {
+      console.error("❌ Failed to obtain a WebGL context. It may be disabled or out of memory.");
+      setWebglSupported(false);
+      return;
+    }
+
+    let renderer, gl;
+    try {
+      renderer = new Renderer({
+        alpha: true,
+        premultipliedAlpha: false,
+        powerPreference: "high-performance",
+      });
+      gl = renderer.gl;
+    } catch (err) {
+      console.error("❌ Failed to initialize OGL Renderer:", err);
+      setWebglSupported(false);
+      return;
+    }
+
+    if (!gl) {
+      console.error("❌ No valid WebGL context obtained.");
+      setWebglSupported(false);
+      return;
+    }
+
     gl.clearColor(0, 0, 0, 0);
     container.appendChild(gl.canvas);
 
@@ -197,37 +222,40 @@ export default function Orb({
       uniforms: {
         iTime: { value: 0 },
         iResolution: {
-          value: new Vec3(gl.canvas.width, gl.canvas.height, gl.canvas.width / gl.canvas.height)
+          value: new Vec3(gl.canvas.width, gl.canvas.height, gl.canvas.width / gl.canvas.height),
         },
         hue: { value: hue },
         hover: { value: 0 },
         rot: { value: 0 },
         hoverIntensity: { value: hoverIntensity },
-        backgroundColor: { value: hexToVec3(backgroundColor) }
-      }
+        backgroundColor: { value: hexToVec3(backgroundColor) },
+      },
     });
 
     const mesh = new Mesh(gl, { geometry, program });
 
-    function resize() {
-      if (!container) return;
-      const dpr = window.devicePixelRatio || 1;
+    const resize = () => {
       const width = container.clientWidth;
       const height = container.clientHeight;
+      const dpr = window.devicePixelRatio || 1;
       renderer.setSize(width * dpr, height * dpr);
-      gl.canvas.style.width = width + 'px';
-      gl.canvas.style.height = height + 'px';
-      program.uniforms.iResolution.value.set(gl.canvas.width, gl.canvas.height, gl.canvas.width / gl.canvas.height);
-    }
-    window.addEventListener('resize', resize);
+      gl.canvas.style.width = width + "px";
+      gl.canvas.style.height = height + "px";
+      program.uniforms.iResolution.value.set(
+        gl.canvas.width,
+        gl.canvas.height,
+        gl.canvas.width / gl.canvas.height
+      );
+    };
+    window.addEventListener("resize", resize);
     resize();
 
     let targetHover = 0;
-    let lastTime = 0;
     let currentRot = 0;
+    let lastTime = 0;
     const rotationSpeed = 0.3;
 
-    const handleMouseMove = e => {
+    const handleMouseMove = (e) => {
       const rect = container.getBoundingClientRect();
       const x = e.clientX - rect.left;
       const y = e.clientY - rect.top;
@@ -238,60 +266,56 @@ export default function Orb({
       const centerY = height / 2;
       const uvX = ((x - centerX) / size) * 2.0;
       const uvY = ((y - centerY) / size) * 2.0;
-
-      if (Math.sqrt(uvX * uvX + uvY * uvY) < 0.8) {
-        targetHover = 1;
-      } else {
-        targetHover = 0;
-      }
+      targetHover = Math.sqrt(uvX * uvX + uvY * uvY) < 0.8 ? 1 : 0;
     };
+    const handleMouseLeave = () => (targetHover = 0);
 
-    const handleMouseLeave = () => {
-      targetHover = 0;
-    };
-
-    container.addEventListener('mousemove', handleMouseMove);
-    container.addEventListener('mouseleave', handleMouseLeave);
+    container.addEventListener("mousemove", handleMouseMove);
+    container.addEventListener("mouseleave", handleMouseLeave);
 
     let rafId;
-    const update = t => {
-      rafId = requestAnimationFrame(update);
+    const animate = (t) => {
+      rafId = requestAnimationFrame(animate);
       const dt = (t - lastTime) * 0.001;
       lastTime = t;
-      program.uniforms.iTime.value = t * 0.001;
-      program.uniforms.hue.value = hue;
-      program.uniforms.hoverIntensity.value = hoverIntensity;
-      program.uniforms.backgroundColor.value = hexToVec3(backgroundColor);
 
+      program.uniforms.iTime.value = t * 0.001;
       const effectiveHover = forceHoverState ? 1 : targetHover;
       program.uniforms.hover.value += (effectiveHover - program.uniforms.hover.value) * 0.1;
-
-      if (rotateOnHover && effectiveHover > 0.5) {
-        currentRot += dt * rotationSpeed;
-      }
+      if (rotateOnHover && effectiveHover > 0.5) currentRot += dt * rotationSpeed;
       program.uniforms.rot.value = currentRot;
-
       renderer.render({ scene: mesh });
     };
-    rafId = requestAnimationFrame(update);
+    rafId = requestAnimationFrame(animate);
 
+    // ✅ Cleanup
     return () => {
       cancelAnimationFrame(rafId);
-      window.removeEventListener('resize', resize);
-      container.removeEventListener('mousemove', handleMouseMove);
-      container.removeEventListener('mouseleave', handleMouseLeave);
-      container.removeChild(gl.canvas);
-      gl.getExtension('WEBGL_lose_context')?.loseContext();
+      window.removeEventListener("resize", resize);
+      container.removeEventListener("mousemove", handleMouseMove);
+      container.removeEventListener("mouseleave", handleMouseLeave);
+      if (gl?.canvas && container.contains(gl.canvas)) container.removeChild(gl.canvas);
+      gl?.getExtension("WEBGL_lose_context")?.loseContext();
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [hue, hoverIntensity, rotateOnHover, forceHoverState, backgroundColor]);
 
-  return <div ref={ctnDom} className="w-full h-full" />;
+  if (!webglSupported) {
+    return (
+      <div
+        ref={ctnDom}
+        className="w-full h-[700px] flex items-center justify-center text-gray-400 bg-black/80"
+      >
+        WebGL is not supported or disabled on this device.
+      </div>
+    );
+  }
+
+  return <div ref={ctnDom} className="w-full h-[700px]" />;
 }
 
+// ✅ Color helpers
 function hslToRgb(h, s, l) {
   let r, g, b;
-
   if (s === 0) {
     r = g = b = l;
   } else {
@@ -303,30 +327,30 @@ function hslToRgb(h, s, l) {
       if (t < 2 / 3) return p + (q - p) * (2 / 3 - t) * 6;
       return p;
     };
-
     const q = l < 0.5 ? l * (1 + s) : l + s - l * s;
     const p = 2 * l - q;
     r = hue2rgb(p, q, h + 1 / 3);
     g = hue2rgb(p, q, h);
     b = hue2rgb(p, q, h - 1 / 3);
   }
-
   return new Vec3(r, g, b);
 }
 
 function hexToVec3(color) {
-  if (color.startsWith('#')) {
+  if (color.startsWith("#")) {
     const r = parseInt(color.slice(1, 3), 16) / 255;
     const g = parseInt(color.slice(3, 5), 16) / 255;
     const b = parseInt(color.slice(5, 7), 16) / 255;
     return new Vec3(r, g, b);
   }
-
   const rgbMatch = color.match(/rgba?\((\d+),\s*(\d+),\s*(\d+)/);
   if (rgbMatch) {
-    return new Vec3(parseInt(rgbMatch[1]) / 255, parseInt(rgbMatch[2]) / 255, parseInt(rgbMatch[3]) / 255);
+    return new Vec3(
+      parseInt(rgbMatch[1]) / 255,
+      parseInt(rgbMatch[2]) / 255,
+      parseInt(rgbMatch[3]) / 255
+    );
   }
-
   const hslMatch = color.match(/hsla?\((\d+),\s*(\d+)%,\s*(\d+)%/);
   if (hslMatch) {
     const h = parseInt(hslMatch[1]) / 360;
@@ -334,6 +358,5 @@ function hexToVec3(color) {
     const l = parseInt(hslMatch[3]) / 100;
     return hslToRgb(h, s, l);
   }
-
   return new Vec3(0, 0, 0);
 }
