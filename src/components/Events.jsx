@@ -1,7 +1,7 @@
 import React from "react";
 import Frontend from "../assets/frontend.png";
 import Snake_Ladder from "../assets/Snake_Ladder.webp";
-import Word_draw from "../assets/word_draw.png"
+import Picto_Word from "../assets/Picto_Draw.jpg"
 import Mystery_puzzle from "../assets/mystery-puzzle.jpg"
 import { Link } from "react-router-dom";
 
@@ -53,9 +53,9 @@ const Events = () => {
           <EventCard
             title="PROJECT"
             subtitle="PRESENTATION"
-            desc="Reverse engineering challenge.<br>No problem statement — only output & conditions.<br>Decode the logic behind the result."
-            date="Saturday, March 29"
-            time="11:30 AM – 1:00 PM"
+            desc="Showcase your innovation and creativity by presenting your project ideas and outcomes through impactful, visual posters! ✨"
+            date="Friday, February 20"
+            time="10:30 AM – 12:30 PM"
             image="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
             color="purple"
             to="/events/project-presentation"
@@ -64,9 +64,9 @@ const Events = () => {
           <EventCard
             title="PROMPT"
             subtitle="UI"
-            desc="Showcase your best projects.<br>Impress judges & audience.<br>Present idea, demo & real-world impact, real-world impact."
-            date="Saturday, March 29"
-            time="2:00 PM – 4:00 PM"
+            desc="UI events create smooth, responsive experiences by instantly reacting to user interactions with visual feedback and guidance."
+            date="Friday, February 20"
+            time="10:30 AM – 12:30 PM"
             image={Frontend}
             color="purple"
             to="/events/prompt-ui"
@@ -75,9 +75,9 @@ const Events = () => {
           <EventCard
             title="TECH SNAKE"
             subtitle="& LADDER"
-            desc="Fun technical quiz in snake & ladder formatAnswer questions to climb ladders or slide down.<br>Test your knowledge!"
-            date="Saturday, March 29"
-            time="10:00 AM – 12:30 PM"
+            desc="A tech twist on Snake and Ladder with three rounds—debugging, output prediction, and coding challenges as teams roll to progress."
+            date="Friday, February 20"
+            time="10:30 AM – 12:30 PM"
             image={Snake_Ladder}
             color="purple"
             to="/events/tech-snake-and-ladder"
@@ -108,7 +108,7 @@ const Events = () => {
               title="CLOUD"
               subtitle="COMPUTING"
               desc="Hands-on session on cloud technologies.<br>Learn deployment, scaling & best practices.<br>Build and deploy a real project."
-              date="Saturday, March 29"
+              date="Friday, February 20"
               time="10:00 AM – 1:00 PM"
               image={Snake_Ladder} // ← replace with proper image later
               color="purple"
@@ -136,10 +136,10 @@ const Events = () => {
               <EventCard
                 title="PICTO"
                 subtitle="WORDS"
-                desc="Creative combination of words & quick sketches.<br>Fast rounds, fun challenges.<br>Laughter guaranteed! <br>Laughter guaranteed!"
-                date="Saturday, March 29"
-                time="11:30 AM – 1:00 PM"
-                image={Word_draw}
+                desc=""
+                date="Friday, February 20"
+                time=""
+                image={Picto_Word}
                 color="purple"
                 to="/events/picto-words"
               />
@@ -147,9 +147,9 @@ const Events = () => {
               <EventCard
                 title="MYSTERY"
                 subtitle="PUZZLE"
-                desc="Solve exciting mystery cases.<br>Find clues, crack codes, beat the clock.<br>Team or solo challenge!<br>Laughter guaranteed!"
-                date="Saturday, March 29"
-                time="2:30 PM – 4:00 PM"
+                desc="A thrilling and dynamic three-level challenge combining puzzles, riddles, and timed tasks where teams solve, compete, and unlock victory."
+                date="Friday, February 20"
+                time="1:30 PM – 3:00 PM"
                 image={Mystery_puzzle}
                 color="purple"
                 to="/events/mystery-puzzle"

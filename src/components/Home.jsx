@@ -67,7 +67,7 @@ const Home = () => {
                 Register Now
               </a>
 
-              <button
+              <a
                 className="
       w-full sm:w-auto
       px-6 sm:px-8 py-3 sm:py-4 
@@ -80,7 +80,7 @@ const Home = () => {
 
               >
                 Explore Events
-              </button>
+              </a>
             </div>
           </div>
         </div>
