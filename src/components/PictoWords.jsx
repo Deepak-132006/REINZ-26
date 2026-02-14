@@ -150,7 +150,7 @@ const PictoWords = () => {
                 <p className="font-semibold text-purple-300">
                   Student Coordinator
                 </p>
-                <p>Angel Franklin</p>
+                <p>Srimathi</p>
               </div>
               <div>
                 <p className="font-semibold text-purple-300">Themes</p>
