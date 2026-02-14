@@ -3,8 +3,8 @@ import Frontend from "../assets/frontend.png";
 import Snake_Ladder from "../assets/Snake_Ladder.webp";
 import Picto_Word from "../assets/Picto_Draw.jpg";
 import Mystery_puzzle from "../assets/mystery-puzzle.jpg";
-import Paper from "../assets/paper-presentation.jpg"
-import Gen_AI from "../assets/generative-ai.jpg"
+import Paper from "../assets/paper-presentation.jpg";
+import Gen_AI from "../assets/generative-ai.jpg";
 import { Link } from "react-router-dom";
 
 const Events = () => {
@@ -36,12 +36,11 @@ const Events = () => {
           </p>
         </div>
 
-        {/* ──────── 2 rows × 3 columns grid for 4 tech + 2 non-tech ──────── */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10 mb-20">
           
-          {/* 4 Technical Events cards */}
+          {/* Technical title + first card */}
           <div className="col-span-1 lg:col-span-1 -mt-18">
-                        <h2
+            <h2
               className="
                 text-2xl md:text-3xl lg:text-4xl
                 font-extrabold text-white
@@ -54,46 +53,278 @@ const Events = () => {
             >
               Technical
             </h2>
-            <EventCard
-              title="PROJECT"
-              subtitle="PRESENTATION"
-              desc="Showcase your innovation and creativity by presenting your project ideas and outcomes through impactful, visual posters! ✨"
-              date="Friday, February 20"
-              time="10:30 AM – 12:30 PM"
-              image="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
-              color="purple"
-              to="/events/project-presentation"
-            />
+
+            <div
+              className="
+                bg-gray-900/90 rounded-2xl
+                overflow-hidden shadow-2xl
+                md:hover:-translate-y-4
+                transition-all duration-300 ease-out
+                group
+              "
+              style={{
+                border: "1px solid rgba(126, 34, 206, 0.5)",
+                boxShadow: "0 25px 50px -12px rgba(59, 7, 100, 0.4)",
+              }}
+            >
+              <div className="relative h-56 md:h-64 overflow-hidden">
+                <img
+                  src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+                  alt="PROJECT"
+                  className="
+                    w-full h-full object-cover
+                    brightness-90 contrast-110
+                    scale-105
+                    md:group-hover:scale-110
+                    transition-transform duration-700 ease-out
+                  "
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/35 to-transparent pointer-events-none" />
+                <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-5">
+                  <h2
+                    className="
+                      text-4xl md:text-5xl font-black
+                      tracking-tight drop-shadow-[0_4px_10px_rgba(0,0,0,0.9)]
+                      group-hover:brightness-125
+                      transition-all duration-300
+                    "
+                    style={{ color: "#22d3ee" }}
+                  >
+                    PROJECT
+                  </h2>
+                  <p
+                    className="
+                      text-xl md:text-2xl font-bold
+                      mt-3 drop-shadow-[0_3px_8px_rgba(0,0,0,0.8)]
+                    "
+                    style={{ color: "#e9d5ff" }}
+                  >
+                    PRESENTATION
+                  </p>
+                </div>
+              </div>
+              <div className="p-6 md:p-8">
+                <p className="text-gray-200 text-base md:text-lg leading-relaxed mb-6">
+                  Showcase your innovation and creativity by presenting your project ideas and outcomes through impactful, visual posters! ✨
+                </p>
+                <div className="space-y-4 text-base md:text-lg">
+                  <div className="flex items-center text-gray-300">
+                    <span style={{ color: "#c084fc" }} className="mr-3 text-xl">📅</span>
+                    Friday, February 20
+                  </div>
+                  <div className="flex items-center text-gray-300">
+                    <span style={{ color: "#c084fc" }} className="mr-3 text-xl">🕙</span>
+                    10:30 AM – 12:30 PM
+                  </div>
+                </div>
+                <Link
+                  to="/events/project-presentation"
+                  className="
+                    mt-8 w-full py-4 px-6
+                    text-white font-semibold text-lg rounded-xl
+                    transition-all duration-200
+                    md:hover:scale-[1.02]
+                    active:scale-95
+                    active:brightness-90
+                    active:shadow-lg
+                    block text-center
+                    touch-manipulation
+                  "
+                  style={{
+                    background: "linear-gradient(to right, #7e22ce, #4f46e5)",
+                    boxShadow: "0 10px 15px -3px rgba(59, 7, 100, 0.4)",
+                  }}
+                >
+                  View Details →
+                </Link>
+              </div>
+            </div>
           </div>
 
+          {/* Second card - PROMPT UI */}
           <div className="col-span-1 lg:col-span-1">
-            <EventCard
-              title="PROMPT"
-              subtitle="UI"
-              desc="UI events create smooth, responsive experiences by instantly reacting to user interactions with visual feedback and guidance."
-              date="Friday, February 20"
-              time="10:30 AM – 12:30 PM"
-              image={Frontend}
-              color="purple"
-              to="/events/prompt-ui"
-            />
+            <div
+              className="
+                bg-gray-900/90 rounded-2xl
+                overflow-hidden shadow-2xl
+                md:hover:-translate-y-4
+                transition-all duration-300 ease-out
+                group
+              "
+              style={{
+                border: "1px solid rgba(126, 34, 206, 0.5)",
+                boxShadow: "0 25px 50px -12px rgba(59, 7, 100, 0.4)",
+              }}
+            >
+              <div className="relative h-56 md:h-64 overflow-hidden">
+                <img
+                  src={Frontend}
+                  alt="PROMPT"
+                  className="
+                    w-full h-full object-cover
+                    brightness-90 contrast-110
+                    scale-105
+                    md:group-hover:scale-110
+                    transition-transform duration-700 ease-out
+                  "
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/35 to-transparent pointer-events-none" />
+                <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-5">
+                  <h2
+                    className="
+                      text-4xl md:text-5xl font-black
+                      tracking-tight drop-shadow-[0_4px_10px_rgba(0,0,0,0.9)]
+                      group-hover:brightness-125
+                      transition-all duration-300
+                    "
+                    style={{ color: "#22d3ee" }}
+                  >
+                    PROMPT
+                  </h2>
+                  <p
+                    className="
+                      text-xl md:text-2xl font-bold
+                      mt-3 drop-shadow-[0_3px_8px_rgba(0,0,0,0.8)]
+                    "
+                    style={{ color: "#e9d5ff" }}
+                  >
+                    UI
+                  </p>
+                </div>
+              </div>
+              <div className="p-6 md:p-8">
+                <p className="text-gray-200 text-base md:text-lg leading-relaxed mb-6">
+                  UI events create smooth, responsive experiences by instantly reacting to user interactions with visual feedback and guidance.
+                </p>
+                <div className="space-y-4 text-base md:text-lg">
+                  <div className="flex items-center text-gray-300">
+                    <span style={{ color: "#c084fc" }} className="mr-3 text-xl">📅</span>
+                    Friday, February 20
+                  </div>
+                  <div className="flex items-center text-gray-300">
+                    <span style={{ color: "#c084fc" }} className="mr-3 text-xl">🕙</span>
+                    10:30 AM – 12:30 PM
+                  </div>
+                </div>
+                <Link
+                  to="/events/prompt-ui"
+                  className="
+                    mt-8 w-full py-4 px-6
+                    text-white font-semibold text-lg rounded-xl
+                    transition-all duration-200
+                    md:hover:scale-[1.02]
+                    active:scale-95
+                    active:brightness-90
+                    active:shadow-lg
+                    block text-center
+                    touch-manipulation
+                  "
+                  style={{
+                    background: "linear-gradient(to right, #7e22ce, #4f46e5)",
+                    boxShadow: "0 10px 15px -3px rgba(59, 7, 100, 0.4)",
+                  }}
+                >
+                  View Details →
+                </Link>
+              </div>
+            </div>
           </div>
 
+          {/* Third card - TECH SNAKE & LADDER */}
           <div className="col-span-1 lg:col-span-1">
-            <EventCard
-              title="TECH SNAKE"
-              subtitle="& LADDER"
-              desc="A tech twist on Snake and Ladder with three rounds—debugging, output prediction, and coding challenges as teams roll to progress."
-              date="Friday, February 20"
-              time="10:30 AM – 12:30 PM"
-              image={Snake_Ladder}
-              color="purple"
-              to="/events/tech-snake-and-ladder"
-            />
+            <div
+              className="
+                bg-gray-900/90 rounded-2xl
+                overflow-hidden shadow-2xl
+                md:hover:-translate-y-4
+                transition-all duration-300 ease-out
+                group
+              "
+              style={{
+                border: "1px solid rgba(126, 34, 206, 0.5)",
+                boxShadow: "0 25px 50px -12px rgba(59, 7, 100, 0.4)",
+              }}
+            >
+              <div className="relative h-56 md:h-64 overflow-hidden">
+                <img
+                  src={Snake_Ladder}
+                  alt="TECH SNAKE"
+                  className="
+                    w-full h-full object-cover
+                    brightness-90 contrast-110
+                    scale-105
+                    md:group-hover:scale-110
+                    transition-transform duration-700 ease-out
+                  "
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/35 to-transparent pointer-events-none" />
+                <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-5">
+                  <h2
+                    className="
+                      text-4xl md:text-5xl font-black
+                      tracking-tight drop-shadow-[0_4px_10px_rgba(0,0,0,0.9)]
+                      group-hover:brightness-125
+                      transition-all duration-300
+                    "
+                    style={{ color: "#22d3ee" }}
+                  >
+                    TECH SNAKE
+                  </h2>
+                  <p
+                    className="
+                      text-xl md:text-2xl font-bold
+                      mt-3 drop-shadow-[0_3px_8px_rgba(0,0,0,0.8)]
+                    "
+                    style={{ color: "#e9d5ff" }}
+                  >
+                    & LADDER
+                  </p>
+                </div>
+              </div>
+              <div className="p-6 md:p-8">
+                <p className="text-gray-200 text-base md:text-lg leading-relaxed mb-6">
+                  A tech twist on Snake and Ladder with three rounds—debugging, output prediction, and coding challenges as teams roll to progress.
+                </p>
+                <div className="space-y-4 text-base md:text-lg">
+                  <div className="flex items-center text-gray-300">
+                    <span style={{ color: "#c084fc" }} className="mr-3 text-xl">📅</span>
+                    Friday, February 20
+                  </div>
+                  <div className="flex items-center text-gray-300">
+                    <span style={{ color: "#c084fc" }} className="mr-3 text-xl">🕙</span>
+                    10:30 AM – 12:30 PM
+                  </div>
+                </div>
+                <Link
+                  to="/events/tech-snake-and-ladder"
+                  className="
+                    mt-8 w-full py-4 px-6
+                    text-white font-semibold text-lg rounded-xl
+                    transition-all duration-200
+                    md:hover:scale-[1.02]
+                    active:scale-95
+                    active:brightness-90
+                    active:shadow-lg
+                    block text-center
+                    touch-manipulation
+                  "
+                  style={{
+                    background: "linear-gradient(to right, #7e22ce, #4f46e5)",
+                    boxShadow: "0 10px 15px -3px rgba(59, 7, 100, 0.4)",
+                  }}
+                >
+                  View Details →
+                </Link>
+              </div>
+            </div>
           </div>
 
+          {/* Fourth card - PAPER PRESENTATION + second Technical title */}
           <div className="col-span-1 lg:col-span-1">
-                        <h2
+            <h2
               className="
                 text-2xl md:text-3xl lg:text-4xl
                 font-extrabold text-white
@@ -106,19 +337,96 @@ const Events = () => {
             >
               Technical
             </h2>
-            <EventCard
-              title="PAPER"
-              subtitle="PRESENTATION"
-              desc="A tech twist on Snake and Ladder with three rounds—debugging, output prediction, and coding challenges as teams roll to progress."
-              date="Friday, February 20"
-              time="10:30 AM – 12:30 PM"
-              image={Paper}
-              color="purple"
-              to="/events/paper-presentation"
-            />
+
+            <div
+              className="
+                bg-gray-900/90 rounded-2xl
+                overflow-hidden shadow-2xl
+                md:hover:-translate-y-4
+                transition-all duration-300 ease-out
+                group
+              "
+              style={{
+                border: "1px solid rgba(126, 34, 206, 0.5)",
+                boxShadow: "0 25px 50px -12px rgba(59, 7, 100, 0.4)",
+              }}
+            >
+              <div className="relative h-56 md:h-64 overflow-hidden">
+                <img
+                  src={Paper}
+                  alt="PAPER"
+                  className="
+                    w-full h-full object-cover
+                    brightness-90 contrast-110
+                    scale-105
+                    md:group-hover:scale-110
+                    transition-transform duration-700 ease-out
+                  "
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/35 to-transparent pointer-events-none" />
+                <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-5">
+                  <h2
+                    className="
+                      text-4xl md:text-5xl font-black
+                      tracking-tight drop-shadow-[0_4px_10px_rgba(0,0,0,0.9)]
+                      group-hover:brightness-125
+                      transition-all duration-300
+                    "
+                    style={{ color: "#22d3ee" }}
+                  >
+                    PAPER
+                  </h2>
+                  <p
+                    className="
+                      text-xl md:text-2xl font-bold
+                      mt-3 drop-shadow-[0_3px_8px_rgba(0,0,0,0.8)]
+                    "
+                    style={{ color: "#e9d5ff" }}
+                  >
+                    PRESENTATION
+                  </p>
+                </div>
+              </div>
+              <div className="p-6 md:p-8">
+                <p className="text-gray-200 text-base md:text-lg leading-relaxed mb-6">
+                  A tech twist on Snake and Ladder with three rounds—debugging, output prediction, and coding challenges as teams roll to progress.
+                </p>
+                <div className="space-y-4 text-base md:text-lg">
+                  <div className="flex items-center text-gray-300">
+                    <span style={{ color: "#c084fc" }} className="mr-3 text-xl">📅</span>
+                    Friday, February 20
+                  </div>
+                  <div className="flex items-center text-gray-300">
+                    <span style={{ color: "#c084fc" }} className="mr-3 text-xl">🕙</span>
+                    10:30 AM – 12:30 PM
+                  </div>
+                </div>
+                <Link
+                  to="/events/paper-presentation"
+                  className="
+                    mt-8 w-full py-4 px-6
+                    text-white font-semibold text-lg rounded-xl
+                    transition-all duration-200
+                    md:hover:scale-[1.02]
+                    active:scale-95
+                    active:brightness-90
+                    active:shadow-lg
+                    block text-center
+                    touch-manipulation
+                  "
+                  style={{
+                    background: "linear-gradient(to right, #7e22ce, #4f46e5)",
+                    boxShadow: "0 10px 15px -3px rgba(59, 7, 100, 0.4)",
+                  }}
+                >
+                  View Details →
+                </Link>
+              </div>
+            </div>
           </div>
 
-          {/* 2 Non-Technical Events cards – appear in row 2, columns 2 and 3 */}
+          {/* Non-Technical title + PICTO WORDS */}
           <div className="col-span-1 lg:col-span-1 lg:col-start-2">
             <h2
               className="
@@ -133,36 +441,190 @@ const Events = () => {
             >
               Non-Technical
             </h2>
-            <EventCard
-              title="PICTO"
-              subtitle="WORDS"
-              desc="A thrilling and dynamic three-level challenge combining puzzles, riddles, and timed tasks where teams solve, compete, and unlock victory."
-              date="Friday, February 20"
-              time="1:30 PM – 3:00 PM"
-              image={Picto_Word}
-              color="purple"
-              to="/events/picto-words"
-            />
+
+            <div
+              className="
+                bg-gray-900/90 rounded-2xl
+                overflow-hidden shadow-2xl
+                md:hover:-translate-y-4
+                transition-all duration-300 ease-out
+                group
+              "
+              style={{
+                border: "1px solid rgba(126, 34, 206, 0.5)",
+                boxShadow: "0 25px 50px -12px rgba(59, 7, 100, 0.4)",
+              }}
+            >
+              <div className="relative h-56 md:h-64 overflow-hidden">
+                <img
+                  src={Picto_Word}
+                  alt="PICTO"
+                  className="
+                    w-full h-full object-cover
+                    brightness-90 contrast-110
+                    scale-105
+                    md:group-hover:scale-110
+                    transition-transform duration-700 ease-out
+                  "
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/35 to-transparent pointer-events-none" />
+                <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-5">
+                  <h2
+                    className="
+                      text-4xl md:text-5xl font-black
+                      tracking-tight drop-shadow-[0_4px_10px_rgba(0,0,0,0.9)]
+                      group-hover:brightness-125
+                      transition-all duration-300
+                    "
+                    style={{ color: "#22d3ee" }}
+                  >
+                    PICTO
+                  </h2>
+                  <p
+                    className="
+                      text-xl md:text-2xl font-bold
+                      mt-3 drop-shadow-[0_3px_8px_rgba(0,0,0,0.8)]
+                    "
+                    style={{ color: "#e9d5ff" }}
+                  >
+                    WORDS
+                  </p>
+                </div>
+              </div>
+              <div className="p-6 md:p-8">
+                <p className="text-gray-200 text-base md:text-lg leading-relaxed mb-6">
+                  A thrilling and dynamic three-level challenge combining puzzles, riddles, and timed tasks where teams solve, compete, and unlock victory.
+                </p>
+                <div className="space-y-4 text-base md:text-lg">
+                  <div className="flex items-center text-gray-300">
+                    <span style={{ color: "#c084fc" }} className="mr-3 text-xl">📅</span>
+                    Friday, February 20
+                  </div>
+                  <div className="flex items-center text-gray-300">
+                    <span style={{ color: "#c084fc" }} className="mr-3 text-xl">🕙</span>
+                    1:30 PM – 3:00 PM
+                  </div>
+                </div>
+                <Link
+                  to="/events/picto-words"
+                  className="
+                    mt-8 w-full py-4 px-6
+                    text-white font-semibold text-lg rounded-xl
+                    transition-all duration-200
+                    md:hover:scale-[1.02]
+                    active:scale-95
+                    active:brightness-90
+                    active:shadow-lg
+                    block text-center
+                    touch-manipulation
+                  "
+                  style={{
+                    background: "linear-gradient(to right, #7e22ce, #4f46e5)",
+                    boxShadow: "0 10px 15px -3px rgba(59, 7, 100, 0.4)",
+                  }}
+                >
+                  View Details →
+                </Link>
+              </div>
+            </div>
           </div>
 
+          {/* MYSTERY PUZZLE */}
           <div className="col-span-1 lg:col-span-1">
-            <div className="lg:mt-14"> {/* offset to align better with card below title */}
-              <EventCard
-                title="MYSTERY"
-                subtitle="PUZZLE"
-                desc="A thrilling and dynamic three-level challenge combining puzzles, riddles, and timed tasks where teams solve, compete, and unlock victory."
-                date="Friday, February 20"
-                time="1:30 PM – 3:00 PM"
-                image={Mystery_puzzle}
-                color="purple"
-                to="/events/mystery-puzzle"
-              />
+            <div className="lg:mt-14">
+              <div
+                className="
+                  bg-gray-900/90 rounded-2xl
+                  overflow-hidden shadow-2xl
+                  md:hover:-translate-y-4
+                  transition-all duration-300 ease-out
+                  group
+                "
+                style={{
+                  border: "1px solid rgba(126, 34, 206, 0.5)",
+                  boxShadow: "0 25px 50px -12px rgba(59, 7, 100, 0.4)",
+                }}
+              >
+                <div className="relative h-56 md:h-64 overflow-hidden">
+                  <img
+                    src={Mystery_puzzle}
+                    alt="MYSTERY"
+                    className="
+                      w-full h-full object-cover
+                      brightness-90 contrast-110
+                      scale-105
+                      md:group-hover:scale-110
+                      transition-transform duration-700 ease-out
+                    "
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/35 to-transparent pointer-events-none" />
+                  <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-5">
+                    <h2
+                      className="
+                        text-4xl md:text-5xl font-black
+                        tracking-tight drop-shadow-[0_4px_10px_rgba(0,0,0,0.9)]
+                        group-hover:brightness-125
+                        transition-all duration-300
+                      "
+                      style={{ color: "#22d3ee" }}
+                    >
+                      MYSTERY
+                    </h2>
+                    <p
+                      className="
+                        text-xl md:text-2xl font-bold
+                        mt-3 drop-shadow-[0_3px_8px_rgba(0,0,0,0.8)]
+                      "
+                      style={{ color: "#e9d5ff" }}
+                    >
+                      PUZZLE
+                    </p>
+                  </div>
+                </div>
+                <div className="p-6 md:p-8">
+                  <p className="text-gray-200 text-base md:text-lg leading-relaxed mb-6">
+                    A thrilling and dynamic three-level challenge combining puzzles, riddles, and timed tasks where teams solve, compete, and unlock victory.
+                  </p>
+                  <div className="space-y-4 text-base md:text-lg">
+                    <div className="flex items-center text-gray-300">
+                      <span style={{ color: "#c084fc" }} className="mr-3 text-xl">📅</span>
+                      Friday, February 20
+                    </div>
+                    <div className="flex items-center text-gray-300">
+                      <span style={{ color: "#c084fc" }} className="mr-3 text-xl">🕙</span>
+                      1:30 PM – 3:00 PM
+                    </div>
+                  </div>
+                  <Link
+                    to="/events/mystery-puzzle"
+                    className="
+                      mt-8 w-full py-4 px-6
+                      text-white font-semibold text-lg rounded-xl
+                      transition-all duration-200
+                      md:hover:scale-[1.02]
+                      active:scale-95
+                      active:brightness-90
+                      active:shadow-lg
+                      block text-center
+                      touch-manipulation
+                    "
+                    style={{
+                      background: "linear-gradient(to right, #7e22ce, #4f46e5)",
+                      boxShadow: "0 10px 15px -3px rgba(59, 7, 100, 0.4)",
+                    }}
+                  >
+                    View Details →
+                  </Link>
+                </div>
+              </div>
             </div>
           </div>
         </div>
 
-        {/* ──────── Workshop – full width below the grid ──────── */}
-        <div className="mb-8  md:w-[500px]">
+        {/* Workshop section */}
+        <div className="mb-8 md:w-[500px]">
           <h2
             className="
               text-3xl md:text-4xl lg:text-5xl
@@ -179,138 +641,95 @@ const Events = () => {
             Workshop
           </h2>
 
-          <EventCard
-            title="GEN"
-            subtitle="AI"
-            desc="Explore how machines create art, ideas, and innovation — a hands-on journey into Generative AI!"
-            date="Friday, February 20"
-            time="10:00 AM – 1:00 PM"
-            image={Gen_AI} // ← replace with proper image later
-            color="purple"
-            to="/events/workshop"
-          />
+          <div
+            className="
+              bg-gray-900/90 rounded-2xl
+              overflow-hidden shadow-2xl
+              md:hover:-translate-y-4
+              transition-all duration-300 ease-out
+              group
+            "
+            style={{
+              border: "1px solid rgba(126, 34, 206, 0.5)",
+              boxShadow: "0 25px 50px -12px rgba(59, 7, 100, 0.4)",
+            }}
+          >
+            <div className="relative h-56 md:h-64 overflow-hidden">
+              <img
+                src={Gen_AI}
+                alt="GEN"
+                className="
+                  w-full h-full object-cover
+                  brightness-90 contrast-110
+                  scale-105
+                  md:group-hover:scale-110
+                  transition-transform duration-700 ease-out
+                "
+                loading="lazy"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/35 to-transparent pointer-events-none" />
+              <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-5">
+                <h2
+                  className="
+                    text-4xl md:text-5xl font-black
+                    tracking-tight drop-shadow-[0_4px_10px_rgba(0,0,0,0.9)]
+                    group-hover:brightness-125
+                    transition-all duration-300
+                  "
+                  style={{ color: "#22d3ee" }}
+                >
+                  GEN
+                </h2>
+                <p
+                  className="
+                    text-xl md:text-2xl font-bold
+                    mt-3 drop-shadow-[0_3px_8px_rgba(0,0,0,0.8)]
+                  "
+                  style={{ color: "#e9d5ff" }}
+                >
+                  AI
+                </p>
+              </div>
+            </div>
+            <div className="p-6 md:p-8">
+              <p className="text-gray-200 text-base md:text-lg leading-relaxed mb-6">
+                Explore how machines create art, ideas, and innovation — a hands-on journey into Generative AI!
+              </p>
+              <div className="space-y-4 text-base md:text-lg">
+                <div className="flex items-center text-gray-300">
+                  <span style={{ color: "#c084fc" }} className="mr-3 text-xl">📅</span>
+                  Friday, February 20
+                </div>
+                <div className="flex items-center text-gray-300">
+                  <span style={{ color: "#c084fc" }} className="mr-3 text-xl">🕙</span>
+                  10:00 AM – 1:00 PM
+                </div>
+              </div>
+              <Link
+                to="/events/workshop"
+                className="
+                  mt-8 w-full py-4 px-6
+                  text-white font-semibold text-lg rounded-xl
+                  transition-all duration-200
+                  md:hover:scale-[1.02]
+                  active:scale-95
+                  active:brightness-90
+                  active:shadow-lg
+                  block text-center
+                  touch-manipulation
+                "
+                style={{
+                  background: "linear-gradient(to right, #7e22ce, #4f46e5)",
+                  boxShadow: "0 10px 15px -3px rgba(59, 7, 100, 0.4)",
+                }}
+              >
+                View Details →
+              </Link>
+            </div>
+          </div>
         </div>
       </div>
     </section>
-  );
-};
-
-// EventCard remains unchanged (keeping your original version)
-const EventCard = ({ title, subtitle, desc, date, time, image, color, to }) => {
-  const colorStyles = {
-    purple: {
-      border: "rgba(126, 34, 206, 0.5)",
-      shadow: "rgba(59, 7, 100, 0.4)",
-      hoverShadow: "rgba(126, 34, 206, 0.6)",
-      gradient: "linear-gradient(to right, #7e22ce, #4f46e5)",
-      hoverGradient: "linear-gradient(to right, #9333ea, #6366f1)",
-      text: "#c084fc",
-      titleColor: "#22d3ee",
-      subtitleColor: "#e9d5ff",
-    },
-  };
-  const c = colorStyles[color] || colorStyles.purple;
-
-  return (
-    <div
-      className="
-        bg-gray-900/90 rounded-2xl
-        overflow-hidden shadow-2xl
-        hover:-translate-y-4
-        transition-all duration-300 ease-out
-        group
-      "
-      style={{
-        border: `1px solid ${c.border}`,
-        boxShadow: `0 25px 50px -12px ${c.shadow}`,
-      }}
-      onMouseEnter={(e) => {
-        e.currentTarget.style.boxShadow = `0 25px 50px -12px ${c.hoverShadow}`;
-      }}
-      onMouseLeave={(e) => {
-        e.currentTarget.style.boxShadow = `0 25px 50px -12px ${c.shadow}`;
-      }}
-    >
-      {/* ... rest of EventCard unchanged ... */}
-      <div className="relative h-56 md:h-64 overflow-hidden">
-        <img
-          src={image}
-          alt={title}
-          className="
-            w-full h-full object-cover
-            brightness-90 contrast-110
-            scale-105
-            group-hover:scale-110
-            transition-transform duration-700 ease-out
-          "
-          loading="lazy"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/35 to-transparent pointer-events-none" />
-        <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-5">
-          <h2
-            className="
-              text-4xl md:text-5xl font-black
-              tracking-tight drop-shadow-[0_4px_10px_rgba(0,0,0,0.9)]
-              group-hover:brightness-125
-              transition-all duration-300
-            "
-            style={{ color: c.titleColor }}
-          >
-            {title}
-          </h2>
-          <p
-            className="
-              text-xl md:text-2xl font-bold
-              mt-3 drop-shadow-[0_3px_8px_rgba(0,0,0,0.8)]
-            "
-            style={{ color: c.subtitleColor }}
-          >
-            {subtitle}
-          </p>
-        </div>
-      </div>
-      <div className="p-6 md:p-8">
-        <p
-          className="text-gray-200 text-base md:text-lg leading-relaxed mb-6"
-          dangerouslySetInnerHTML={{ __html: desc }}
-        />
-        <div className="space-y-4 text-base md:text-lg">
-          <div className="flex items-center text-gray-300">
-            <span style={{ color: c.text }} className="mr-3 text-xl">📅</span>
-            {date}
-          </div>
-          <div className="flex items-center text-gray-300">
-            <span style={{ color: c.text }} className="mr-3 text-xl">🕙</span>
-            {time}
-          </div>
-        </div>
-        <Link
-          to={to}
-          className={`
-            mt-8 w-full py-4
-            text-white font-semibold text-lg rounded-xl
-            transition-all duration-300
-            hover:scale-[1.02]
-            active:scale-[0.98]
-            block text-center
-          `}
-          style={{
-            background: c.gradient,
-            boxShadow: `0 10px 15px -3px ${c.shadow}`,
-          }}
-          onMouseEnter={(e) => {
-            e.currentTarget.style.background = c.hoverGradient;
-            e.currentTarget.style.boxShadow = `0 20px 25px -5px ${c.hoverShadow}`;
-          }}
-          onMouseLeave={(e) => {
-            e.currentTarget.style.background = c.gradient;
-            e.currentTarget.style.boxShadow = `0 10px 15px -3px ${c.shadow}`;
-          }}
-        >
-          View Details →
-        </Link>
-      </div>
-    </div>
   );
 };
 

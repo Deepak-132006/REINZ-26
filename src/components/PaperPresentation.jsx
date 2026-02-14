@@ -69,7 +69,7 @@ const PaperPresentation = () => {
             <div className="space-y-5 text-gray-200 text-sm sm:text-base">
               <div>
                 <p className="font-semibold text-purple-300">Coordinator</p>
-                <p>Ms. S.M. Nivetha (AP/IT)</p>
+                <p>Ms. S.Harini (AP/IT)</p>
               </div>
 
               {[
@@ -113,26 +113,44 @@ const PaperPresentation = () => {
           >
             <div className="space-y-5 text-gray-200 text-sm sm:text-base">
               <div>
-                <p className="font-semibold text-purple-300 mb-1.5">Description</p>
+                <p className="font-semibold text-purple-300 mb-1.5">
+                  Description
+                </p>
                 <p>
-                  Present your original research paper or innovative project work 
-                  in front of experts and peers. Showcase your ideas, methodology, 
-                  and findings with clarity and confidence.
+                  Paper Presentation is a technical event where participants
+                  present their ideas or research on a specific technical topic
+                  of their choice using a PowerPoint presentation. The objective
+                  of this event is to encourage innovative thinking, technical
+                  knowledge sharing, and effective communication skills among
+                  students. Participants must clearly explain their topic within
+                  the given time limit.
                 </p>
               </div>
 
               <div>
                 <p className="font-semibold text-purple-300 mb-1.5">Format</p>
                 <ul className="list-disc list-inside space-y-1 marker:text-purple-400">
-                  <li>Individual or team (max 2 members)</li>
-                  <li>10–12 minutes presentation + 3–5 min Q&A</li>
-                  <li>Slides + live demo (if applicable)</li>
-                  <li>PDF/PPT submission required</li>
+                  <li>Team Size: Maximum 3 members per team.</li>
+                  <li>
+                    Topic: Any specific technical topic is allowed.
+                    Non-technical topics are not permitted.
+                  </li>
+                  <li>
+                    Slides: Maximum 8 slides (including title and conclusion).
+                  </li>
+                  <li>
+                    Time Limit: 5 minutes for presentation + 2 minutes for Q&A.
+                  </li>
+                  <li>
+                    Submission: PPT must be submitted before the event begins..
+                  </li>
                 </ul>
               </div>
 
               <div>
-                <p className="font-semibold text-purple-300 mb-1.5">Judging Criteria</p>
+                <p className="font-semibold text-purple-300 mb-1.5">
+                  Judging Criteria
+                </p>
                 <ul className="list-disc list-inside space-y-1 marker:text-purple-400">
                   <li>Content quality & originality</li>
                   <li>Clarity of presentation</li>
