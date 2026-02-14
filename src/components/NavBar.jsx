@@ -22,9 +22,9 @@ const NavBar = () => {
           <div className="relative group">
             <div className="flex items-center">
               <img
-                src={Logo}
-                alt="DGCT Logo"
-                className="drop-shadow-md w-12 md:w-16"
+                src={IT}
+                alt="IT Logo"
+                className="drop-shadow-md w-15 md:w-18"
               />
               <span
                 className="reinz pl-3
@@ -48,7 +48,7 @@ const NavBar = () => {
                 border border-white/10 shadow-lg hidden md:block
               "
             >
-              Dhirajlal Gandhi College of Technology
+               Elite Association
             </div>
           </div>
 
@@ -82,7 +82,7 @@ const NavBar = () => {
           <div className="flex items-center gap-4">
             {/* Right logo (IT) with hover text */}
             <div className="relative group hidden md:block">
-              <img src={IT} alt="IT Logo" className="w-18 drop-shadow-md" />
+              <img src={Logo} alt="IT Logo" className="w-18 drop-shadow-md" />
 
               <div
                 className="
@@ -93,7 +93,7 @@ const NavBar = () => {
                   border border-white/10 shadow-lg
                 "
               >
-                Elite Association
+               Dhirajlal Gandhi College of Technology
               </div>
             </div>
 
@@ -139,7 +139,7 @@ const NavBar = () => {
         >
           <ul className="flex flex-col gap-4 text-lg font-medium">
             {[
-              { name: "Home", to: "/" },
+              { name: "Home", to: "/#home" },
               { name: "About", to: "/#about" },
               { name: "Events", to: "/#events" },
               { name: "Register", to: "/#register" },
@@ -163,7 +163,8 @@ const NavBar = () => {
           </ul>
 
           <div className="mt-5 pt-3 border-t border-white/10">
-            <img className="w-18 mx-auto opacity-80" src={IT} alt="IT Logo" />
+            <img className="w-18 mx-auto opacity-80" src={Logo} alt="DGCT - Logo" />
+            <p className="text-white text-18 font-medium">Dhirajlal Gandhi College of Technology</p>
           </div>
         </div>
       </div>

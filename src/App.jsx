@@ -11,6 +11,7 @@ import TechSnakeLadder from "./components/TechSnakeLadder";
 import WorkShop from "./components/WorkShop";
 import MysteryPuzzle from "./components/MysteryPuzzle";
 import PictoWords from "./components/PictoWords";
+import PaperPresentation from "./components/PaperPresentation";
 import { Routes, Route, useLocation } from "react-router-dom";
 import ScrollToTop from "./components/ScrollToTop";
 
@@ -56,6 +57,7 @@ const App = () => {
         <Route path="/events/project-presentation" element={<Project />} />
         <Route path="/events/prompt-ui" element={<PromptUI />} />
         <Route path="/events/tech-snake-and-ladder" element={<TechSnakeLadder />} />
+        <Route path="/events/paper-presentation" element={<PaperPresentation/>} />
         <Route path="/events/workshop" element={<WorkShop />} />
         <Route path="/events/picto-words" element={<PictoWords />} />
         <Route path="/events/mystery-puzzle" element={<MysteryPuzzle />} />
