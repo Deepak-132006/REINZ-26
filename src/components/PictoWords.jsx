@@ -69,7 +69,14 @@ const PictoWords = () => {
             icon={<AcademicCapIcon className="w-9 h-9 sm:w-10 sm:h-10" />}
             title="Event Description"
           >
-            <p className="text-gray-200 text-sm sm:text-base leading-relaxed"></p>
+            <p className="text-gray-200 text-sm sm:text-base leading-relaxed">
+              This event tests participants’ memory, observation, teamwork,
+              coordination, and creativity through two exciting rounds. Round 1
+              challenges teams to observe and recall objects from a displayed
+              image. Round 2 combines a fun balloon-based physical task with
+              drawing and guessing to test team coordination and communication
+              skills.
+            </p>
           </GlassCard>
 
           <GlassCard
@@ -79,8 +86,18 @@ const PictoWords = () => {
             title="Rules"
           >
             <ul className="text-gray-200 text-sm sm:text-base space-y-2.5 list-disc list-inside marker:text-purple-400">
-              <li></li>
-              <li></li>
+              <li>
+                Round 1: Image displayed for 30–45 seconds. Teams recall one
+                object per turn. Repetition, wrong answers, or delay leads to
+                elimination. Time limit: 2–3 minutes
+              </li>
+              <li>
+                Round 2: 2 members per team. One member gets a secret clue. The
+                other completes a balloon cup-passing challenge. After
+                completion, the clue is drawn and guessed. No speaking or
+                writing letters while drawing.
+              </li>
+              <li>Time limit: 2–3 minutes.</li>
             </ul>
           </GlassCard>
 
@@ -89,7 +106,14 @@ const PictoWords = () => {
             title="Judging Criteria"
           >
             <ul className="text-gray-200 text-sm sm:text-base space-y-2">
-              <li className="flex justify-between"></li>
+              <li className="flex justify-between">
+                Round 1: 1 point per correct object.
+              </li>
+              <li className="flex justify-between">
+                Round 2: Points awarded for task completion and correct
+                guessing. The team with the highest combined score from both
+                rounds wins.
+              </li>
             </ul>
           </GlassCard>
 

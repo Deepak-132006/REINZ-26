@@ -4,6 +4,7 @@ import Snake_Ladder from "../assets/Snake_Ladder.webp";
 import Picto_Word from "../assets/Picto_Draw.jpg";
 import Mystery_puzzle from "../assets/mystery-puzzle.jpg";
 import Paper from "../assets/paper-presentation.jpg"
+import Gen_AI from "../assets/generative-ai.jpg"
 import { Link } from "react-router-dom";
 
 const Events = () => {
@@ -179,12 +180,12 @@ const Events = () => {
           </h2>
 
           <EventCard
-            title="CLOUD"
-            subtitle="COMPUTING"
-            desc="Hands-on session on cloud technologies. Learn deployment, scaling & best practices. Build and deploy a real project."
+            title="GEN"
+            subtitle="AI"
+            desc="Explore how machines create art, ideas, and innovation — a hands-on journey into Generative AI!"
             date="Friday, February 20"
             time="10:00 AM – 1:00 PM"
-            image={Snake_Ladder} // ← replace with proper image later
+            image={Gen_AI} // ← replace with proper image later
             color="purple"
             to="/events/workshop"
           />
