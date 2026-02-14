@@ -161,7 +161,7 @@ const Events = () => {
         </div>
 
         {/* ──────── Workshop – full width below the grid ──────── */}
-        <div className="mb-8 w-[500px]">
+        <div className="mb-8  md:w-[500px]">
           <h2
             className="
               text-3xl md:text-4xl lg:text-5xl
