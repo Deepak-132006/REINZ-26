@@ -46,3 +46,18 @@
   font-family: 'Fighting', sans-serif;
   font-weight: bolder;
 }
+
+
+img {
+  -webkit-touch-callout: none;     
+  -webkit-user-select: none;       
+  user-select: none;               
+  pointer-events: auto;             
+}
+
+nav img,
+nav * {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none;
+}

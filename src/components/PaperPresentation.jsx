@@ -68,14 +68,22 @@ const PaperPresentation = () => {
           >
             <div className="space-y-5 text-gray-200 text-sm sm:text-base">
               <div>
-                <p className="font-semibold text-purple-300">Coordinator</p>
-                <p>Ms. S.Harini (AP/IT)</p>
+                <p className="font-semibold text-purple-300">
+                  Staff Coordinator
+                </p>
+                <p>Ms. G.Sathya (AP/IT)</p>
+              </div>
+              <div>
+                <p className="font-semibold text-purple-300">
+                  Student Coordinator
+                </p>
+                <p>Haripradha S</p>
               </div>
 
               {[
                 [CalendarIcon, "Date", "Friday, February 20, 2026"],
-                [ClockIcon, "Time", "10:00 AM – 12:30 PM"],
-                [MapPinIcon, "Venue", "Data Tech Lab"],
+                [ClockIcon, "Time", "10:00 AM"],
+                [MapPinIcon, "Venue", "III Year Class Room"],
                 [CurrencyRupeeIcon, "Fee", "₹200 per participant"],
               ].map(([Icon, label, value], idx) => (
                 <div key={idx} className="flex items-center gap-3.5">
@@ -143,6 +151,9 @@ const PaperPresentation = () => {
                   </li>
                   <li>
                     Submission: PPT must be submitted before the event begins..
+                  </li>
+                  <li>
+                    Q & A session will follow
                   </li>
                 </ul>
               </div>

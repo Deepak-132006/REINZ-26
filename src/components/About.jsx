@@ -1,6 +1,6 @@
 import React from "react";
 import IT from "../assets/It.png";
-import Poster from "../assets/poster.jpeg";
+import Poster from "../assets/poster.png";
 
 const About = () => {
   return (

@@ -106,7 +106,7 @@ const Events = () => {
               </div>
               <div className="p-6 md:p-8">
                 <p className="text-gray-200 text-base md:text-lg leading-relaxed mb-6">
-                  Showcase your innovation and creativity by presenting your project ideas and outcomes through impactful, visual posters! ✨
+                  Showcase your innovation and creativity by presenting your project ideas and outcomes through impactful, visual posters!
                 </p>
                 <div className="space-y-4 text-base md:text-lg">
                   <div className="flex items-center text-gray-300">
@@ -390,7 +390,7 @@ const Events = () => {
               </div>
               <div className="p-6 md:p-8">
                 <p className="text-gray-200 text-base md:text-lg leading-relaxed mb-6">
-                  A tech twist on Snake and Ladder with three rounds—debugging, output prediction, and coding challenges as teams roll to progress.
+A technical event where participants present innovative ideas or research through PowerPoint, fostering creativity and knowledge sharing.
                 </p>
                 <div className="space-y-4 text-base md:text-lg">
                   <div className="flex items-center text-gray-300">
@@ -436,7 +436,7 @@ const Events = () => {
                 relative inline-block
                 after:content-[''] after:absolute after:bottom-[-8px] after:left-0
                 after:w-32 after:h-1 after:rounded-full
-                after:bg-gradient-to-r after:from-pink-500 after:to-rose-600
+                after:bg-gradient-to-r after:from-green-500 after:to-cyan-600
               "
             >
               Non-Technical
@@ -531,7 +531,7 @@ const Events = () => {
           </div>
 
           {/* MYSTERY PUZZLE */}
-          <div className="col-span-1 lg:col-span-1">
+          <div className="col-span-1 lg:col-span-1 mt-3">
             <div className="lg:mt-14">
               <div
                 className="
@@ -702,7 +702,7 @@ const Events = () => {
                 </div>
                 <div className="flex items-center text-gray-300">
                   <span style={{ color: "#c084fc" }} className="mr-3 text-xl">🕙</span>
-                  10:00 AM – 1:00 PM
+                  10:00 AM - 12.00 PM
                 </div>
               </div>
               <Link

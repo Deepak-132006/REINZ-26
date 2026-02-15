@@ -15,6 +15,7 @@ const NavBar = () => {
           rounded-xl shadow-xl shadow-black/30
           transition-all duration-300
           items-center
+          z-50
         `}
       >
         <div className="flex items-center justify-between px-4 py-2 md:py-2">
@@ -48,7 +49,7 @@ const NavBar = () => {
                 border border-white/10 shadow-lg hidden md:block
               "
             >
-               Elite Association
+              Elite Association
             </div>
           </div>
 
@@ -93,7 +94,7 @@ const NavBar = () => {
                   border border-white/10 shadow-lg
                 "
               >
-               Dhirajlal Gandhi College of Technology
+                Dhirajlal Gandhi College of Technology
               </div>
             </div>
 
@@ -123,19 +124,23 @@ const NavBar = () => {
       </div>
 
       {/* Mobile menu */}
+      {/* Mobile menu */}
       <div
         className={`
-          md:hidden transition-all duration-400 ease-in-out
-          ${isOpen ? "max-h-96 opacity-100 mt-3" : "max-h-0 opacity-0 mt-0"}
-        `}
+    md:hidden
+    transition-all duration-400 ease-in-out
+    z-[60]                           {/* slightly higher than navbar */}
+    ${isOpen ? "max-h-[500px] opacity-100 mt-3 pointer-events-auto" : "max-h-0 opacity-0 mt-0 pointer-events-none"}
+    overflow-hidden                  {/* ← important: prevents content bleed */}
+  `}
       >
         <div
           className={`
-            mx-auto w-[92%] max-w-md
-            backdrop-blur-xl bg-white/5 border border-white/10
-            rounded-2xl shadow-2xl shadow-black/30
-            py-5 px-6 text-center
-          `}
+      mx-auto w-[92%] max-w-md
+      backdrop-blur-xl bg-white/5 border border-white/10
+      rounded-2xl shadow-2xl shadow-black/30
+      py-5 px-6 text-center
+    `}
         >
           <ul className="flex flex-col gap-4 text-lg font-medium">
             {[
@@ -147,13 +152,13 @@ const NavBar = () => {
             ].map((item) => (
               <li key={item.name}>
                 <Link
-                  to={item.to} // ← fixed: use 'to'
+                  to={item.to}
                   className={`
-                    block py-1 px-4 rounded-xl text-[#f0f4ff]
-                    transition-all duration-300
-                    hover:bg-white/10 hover:text-white
-                    active:bg-white/15
-                  `}
+              block py-1 px-4 rounded-xl text-[#f0f4ff]
+              transition-all duration-300
+              hover:bg-white/10 hover:text-white
+              active:bg-white/15
+            `}
                   onClick={() => setIsOpen(false)}
                 >
                   {item.name}
@@ -163,8 +168,14 @@ const NavBar = () => {
           </ul>
 
           <div className="mt-5 pt-3 border-t border-white/10">
-            <img className="w-18 mx-auto opacity-80" src={Logo} alt="DGCT - Logo" />
-            <p className="text-white text-18 font-medium">Dhirajlal Gandhi College of Technology</p>
+            <img
+              className="w-18 mx-auto opacity-80"
+              src={Logo}
+              alt="DGCT - Logo"
+            />
+            <p className="text-white text-18 font-medium">
+              Dhirajlal Gandhi College of Technology
+            </p>
           </div>
         </div>
       </div>

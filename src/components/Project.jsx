@@ -94,12 +94,16 @@ const Project = () => {
           >
             <div className="space-y-4 text-gray-200 text-sm sm:text-base">
               <div>
+                <p className="font-semibold text-purple-300">Staff Coordinator</p>
+                <p>Mr. S.Sankar HOD IT</p>
+              </div>
+              <div>
                 <p className="font-semibold text-purple-300">Coordinator</p>
                 <p>Rithika B.</p>
               </div>
               <div>
                 <p className="font-semibold text-purple-300">Themes</p>
-                <div className="flex gap-6"> 
+                <div className="flex gap-6">
                   <div>
                     <ul>
                       <li>• AI</li>

@@ -69,26 +69,22 @@ const WorkShop = () => {
             <div className="space-y-6 text-gray-200 text-sm sm:text-base">
               {/* Small Profile Image Space – Judge / Coordinator */}
               <div className="flex items-center gap-4">
-                <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full overflow-hidden border-2 border-purple-500/40 bg-gradient-to-br from-purple-500/20 to-indigo-500/20 flex items-center justify-center flex-shrink-0">
-                  {/* Replace with actual image */}
-                  <img
-                    src="https://via.placeholder.com/80/6B7280/FFFFFF?text=Judge" // ← placeholder – replace with real image
-                    alt="Judge / Coordinator"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
                 <div>
                   <p className="font-semibold text-purple-300">
-                    Judge / Coordinator
+                    Guest Lecture: Exploring Generative AI
                   </p>
-                  <p className="text-base">Ms. S.M. Nivetha (AP/IT)</p>
+                  <p className="text-lg font-semibold text-white">
+                    Mr. Koodeeswaran T
+                  </p>
+                  <p className="text-base">VK Academy IT Solutions Pvt.</p>
+                  <p className="text-base">Bangalore</p>
                 </div>
               </div>
 
               {/* Event Details */}
               {[
                 [CalendarIcon, "Date", "Friday, February 20, 2026"],
-                [ClockIcon, "Time", "10:00 AM – 12:30 PM"],
+                [ClockIcon, "Time", "10:00 AM – 12:00 PM"],
                 [MapPinIcon, "Venue", "Placement Seminar Hall / AC"],
                 [CurrencyRupeeIcon, "Fee", "₹300 per head"],
               ].map(([Icon, label, value], idx) => (
@@ -126,6 +122,7 @@ const WorkShop = () => {
           <GlassCard
             icon={<AcademicCapIcon className="w-9 h-9 sm:w-10 sm:h-10" />}
             title="Event Overview"
+            className=" h-[300px]"
           >
             <div className="space-y-6 text-gray-200 text-sm sm:text-base">
               <div>
@@ -133,40 +130,11 @@ const WorkShop = () => {
                   Description
                 </p>
                 <p>
-                  Prompt UI is a fast-paced, no-code UI design challenge where
-                  participants create stunning interfaces using only AI prompts.
-                  Focus on creativity, speed, and visual excellence.
+                  Explore how Generative AI is transforming creativity through
+                  powerful tools for image, video, and code generation. Discover
+                  how innovations like ChatGPT, Midjourney, and Runway are
+                  reshaping the future of creation and design.
                 </p>
-              </div>
-
-              <div>
-                <p className="font-semibold text-purple-300 mb-2">
-                  Rules (Placeholder)
-                </p>
-                <ul className="list-disc list-inside space-y-1.5 marker:text-purple-400">
-                  <li>Max 30 minutes to complete</li>
-                  <li>Team: 1–2 members</li>
-                  <li>Zero-code policy — only AI tools allowed</li>
-                  <li>Limited to 5–7 prompts</li>
-                  <li>Any modern UI generation tool permitted</li>
-                </ul>
-              </div>
-
-              <div>
-                <p className="font-semibold text-purple-300 mb-2">
-                  Judging Focus (Placeholder)
-                </p>
-                <ul className="list-disc list-inside space-y-1.5 marker:text-purple-400">
-                  <li>Prompt efficiency & clarity</li>
-                  <li>Visual design quality & aesthetics</li>
-                  <li>Consistency & attention to detail</li>
-                  <li>Creativity & innovation</li>
-                </ul>
-              </div>
-
-              <div>
-                <p className="font-semibold text-purple-300 mb-2">Theme</p>
-                <p className="leading-relaxed">Fluid & Modern Design</p>
               </div>
             </div>
           </GlassCard>
