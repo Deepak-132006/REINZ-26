@@ -131,7 +131,7 @@ const Project = () => {
                 ["Date", "Friday, February 20, 2026"],
                 ["Time", "10:00 AM – 12:30 PM"],
                 ["Venue", "Data Analytics Lab"],
-                ["Fee", "₹200 / participant"],
+                ["Fee", "₹150 / participant"],
               ].map(([label, value], idx) => (
                 <div key={idx} className="flex items-center gap-3">
                   {label === "Date" && (

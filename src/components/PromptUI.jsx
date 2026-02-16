@@ -165,7 +165,7 @@ const PromptUI = () => {
                 [CalendarIcon, "Date", "Friday, February 20, 2026"],
                 [ClockIcon, "Time", "10:00 AM – 12:30 PM"],
                 [MapPinIcon, "Venue", "Data Tech Lab"],
-                [CurrencyRupeeIcon, "Registration Fee", "₹200 per head"],
+                [CurrencyRupeeIcon, "Registration Fee", "₹150 per head"],
               ].map(([Icon, label, value], idx) => (
                 <div key={idx} className="flex items-center gap-3.5">
                   <Icon className="w-6 h-6 sm:w-7 sm:h-7 text-purple-400 flex-shrink-0" />
