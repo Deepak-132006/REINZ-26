@@ -42,7 +42,7 @@ It features multiple technical and non-technical events aimed at encouraging inn
 ## 🧑‍💻 Developer
 **Deepak**  
 Frontend Developer | Java + React Enthusiast  
-📧 [deepaknarasimman@gmail.com](mailto:deepaknarasimman@gmail.com)  
+📧 [deepakn132006@gmail.com](mailto:deepakn132006@gmail.com)  
 🌐 [GitHub Profile](https://github.com/Deepak-132006)
 
 ---
