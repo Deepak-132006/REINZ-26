@@ -199,11 +199,11 @@ const Contact = () => {
                   <span>89253 62927</span>
                 </a>
                 <a
-                  href="tel:+919994175330"
+                  href="tel:+919080429551"
                   className="flex items-center gap-3 text-white hover:text-indigo-300 transition-colors"
                 >
                   <PhoneIcon className="w-5 h-5 text-indigo-400" />
-                  <span>99941 75330</span>
+                  <span>90804 29551</span>
                 </a>
               </div>
             </div>
@@ -329,14 +329,14 @@ const Contact = () => {
               </h4>
               <div className="space-y-4">
                 <a
-                  href="tel:+919852549524"
+                  href="tel:"
                   className="flex items-center gap-3 text-white hover:text-indigo-300 transition-colors"
                 >
                   <PhoneIcon className="w-5 h-5 text-indigo-400" />
                   <span>-</span>
                 </a>
                 <a
-                  href="tel:+919852549374"
+                  href="tel:"
                   className="flex items-center gap-3 text-white hover:text-indigo-300 transition-colors"
                 >
                   <PhoneIcon className="w-5 h-5 text-indigo-400" />
