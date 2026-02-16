@@ -2,7 +2,7 @@
 
 A modern and responsive event website for **REINZ 2026**, the annual symposium of the **Information Technology Department**, hosted by **Dhirajlal Gandhi College of Technology (DGCT), Salem, Tamil Nadu**.
 
-This website is designed and developed solely by **Deepak N** using **React**, **React-Bits**, and **Tailwind CSS**, providing an elegant, fast, and interactive experience for event participants and visitors.
+This website is designed and developed solely by **Deepak** using **React**, **React-Bits**, and **Tailwind CSS**, providing an elegant, fast, and interactive experience for event participants and visitors.
 
 ---
 
@@ -40,7 +40,7 @@ It features multiple technical and non-technical events aimed at encouraging inn
 ---
 
 ## 🧑‍💻 Developer
-**Deepak N**  
+**Deepak**  
 Frontend Developer | Java + React Enthusiast  
 📧 [deepaknarasimman@gmail.com](mailto:deepaknarasimman@gmail.com)  
 🌐 [GitHub Profile](https://github.com/Deepak-132006)
