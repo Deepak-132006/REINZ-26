@@ -1,16 +1,52 @@
-# React + Vite
+# 🌐 REINZ 2026 — IT Department Symposium Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern and responsive event website for **REINZ 2026**, the annual symposium of the **Information Technology Department**, hosted by **Dhirajlal Gandhi College of Technology (DGCT), Salem, Tamil Nadu**.
 
-Currently, two official plugins are available:
+This website is designed and developed solely by **Deepak N** using **React**, **React-Bits**, and **Tailwind CSS**, providing an elegant, fast, and interactive experience for event participants and visitors.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## 🚀 Live Demo
+🔗 [View Website](https://reinz26.netlify.app)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🧩 Tech Stack
+- ⚛️ **React.js** — Component-based UI
+- 🧱 **React-Bits** — Reusable components & UI patterns
+- 🎨 **Tailwind CSS** — Utility-first modern styling
+- 🌐 **Netlify** — Deployment and hosting
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🏛️ About the Event
+**REINZ 2026** is a technical symposium organized by the **Information Technology Department** at DGCT.  
+It features multiple technical and non-technical events aimed at encouraging innovation, collaboration, and creativity among students.
+
+---
+
+## 💡 Features
+- 🎫 Event listings and details  
+- 🧾 Registration links  
+- 🕹️ Interactive UI sections  
+- 📅 Event schedule and location info  
+- 📱 Fully responsive and fast-loading design  
+
+---
+
+## 📸 Screenshots
+(Add screenshots or preview images of your website UI here)
+
+---
+
+## 🧑‍💻 Developer
+**Deepak N**  
+Frontend Developer | Java + React Enthusiast  
+📧 [deepaknarasimman@gmail.com](mailto:deepaknarasimman@gmail.com)  
+🌐 [GitHub Profile](https://github.com/Deepak-132006)
+
+---
+
+## 📜 License
+This project is created for educational and event publication purposes.  
+© 2026 Deepak N. All Rights Reserved.
