@@ -82,7 +82,7 @@ const PaperPresentation = () => {
 
               {[
                 [CalendarIcon, "Date", "Friday, February 20, 2026"],
-                [ClockIcon, "Time", "10:00 AM"],
+                [ClockIcon, "Time", "10:00 AM - 12.30 PM"],
                 [MapPinIcon, "Venue", "III Year Class Room"],
                 [CurrencyRupeeIcon, "Fee", "₹150 per participant"],
               ].map(([Icon, label, value], idx) => (

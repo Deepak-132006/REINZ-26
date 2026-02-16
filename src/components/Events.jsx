@@ -678,7 +678,7 @@ A technical event where participants present innovative ideas or research throug
                   "
                   style={{ color: "#22d3ee" }}
                 >
-                  GEN
+                  GENERATIVE
                 </h2>
                 <p
                   className="
