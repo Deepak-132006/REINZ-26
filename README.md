@@ -35,7 +35,7 @@ It features multiple technical and non-technical events aimed at encouraging inn
 ---
 
 ## 📸 Screenshots
-(Add screenshots or preview images of your website UI here)
+(output/Full Page.jpeg)
 
 ---
 
