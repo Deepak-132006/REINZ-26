@@ -35,7 +35,7 @@ It features multiple technical and non-technical events aimed at encouraging inn
 ---
 
 ## 📸 Screenshots
-(output/Full_Page.jpeg)
+!(output/Full_Page.jpeg)
 
 ---
 
