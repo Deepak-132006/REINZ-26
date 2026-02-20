@@ -21,7 +21,7 @@ This website is designed and developed solely by **Deepak** using **React**, **R
 
 ## 🏛️ About the Event
 **REINZ 2026** is a technical symposium organized by the **Information Technology Department** at DGCT.  
-It features multiple technical and non-technical events aimed at encouraging innovation, collaboration, and creativity among students.
+It features multiple technical and non-technical events aimed at encouraging innovation, collaboration, and creativity among students. 
 
 ---
 
